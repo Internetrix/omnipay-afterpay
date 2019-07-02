@@ -1,2 +1,2 @@
 # omnipay-afterpay
-Afterpay gateway for Omnipay payment processing library
+Afterpay gateway for Omnipay payment processing library cloned from https://github.com/mediabeastnz/omnipay-afterpay

@@ -1,5 +1,5 @@
 {
-    "name": "mediabeastnz/omnipay-afterpay",
+    "name": "internetrix/omnipay-afterpay",
     "type": "library",
     "version": "2.1.0",
     "description": "AfterPay gateway for Omnipay payment processing library",
@@ -13,7 +13,7 @@
         "payment",
         "gateway"
     ],
-    "homepage": "https://github.com/mediabeastnz/omnipay-afterpay",
+    "homepage": "https://github.com/JohnTranterInternetrix/omnipay-afterpay",
     "license": "MIT",
     "authors": [
         {
