@@ -36,7 +36,7 @@ class PurchaseResponse extends Response
 <body>
     <script>
     window.onload = function() {
-        AfterPay.init(countryCode: "%s");
+        AfterPay.init({countryCode: "%s"});
         AfterPay.redirect({token: "%s"});
     };
     </script>
