@@ -45,6 +45,24 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     /**
+     * @return mixed
+     */
+    public function getCustomUserAgent()
+    {
+        return $this->getParameter('customUserAgent');
+    }
+
+    /**
+     * @param mixed $value
+     * @return $this
+     * @throws \Omnipay\Common\Exception\RuntimeException
+     */
+    public function setCustomUserAgent($value)
+    {
+        return $this->setParameter('customUserAgent', $value);
+    }
+
+    /**
      * @return array
      */
     public function getHeaders()
@@ -146,6 +164,11 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     protected function getUserAgent() {
+        $customUserAgent = $this->getParameter('customUserAgent');
+        if($customUserAgent){
+            return $customUserAgent;
+        }
+
         return 'Omnipay (Omnipay-Afterpay/'.PHP_VERSION.' ; '.$this->getMerchantId().')';
     }
 }
