@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 class PurchaseResponse extends Response
 {
-    protected $script = 'https://portal.sandbox.afterpay.com/afterpay.js';
+    protected $script = 'https://portal.afterpay.com/afterpay.js';
 
     public function getRedirectMethod()
     {
