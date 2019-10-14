@@ -101,10 +101,11 @@ class PurchaseRequest extends AbstractRequest
         if ($items !== null) {
             /** @var \Omnipay\Common\ItemInterface $item */
             foreach ($items as $item) {
+                $params = $item->getParameters();
                 $itemArray[] = array(
                     'name'     => $item->getName(),
                     'quantity' => $item->getQuantity(),
-                    'sku' => $item->getParameter('sku'),
+                    'sku' => isset($params['sku']) ? $params['sku'] : '',
                     'price'    => array(
                         'amount'   => $this->formatPrice($item->getPrice()),
                         'currency' => $this->getCurrency(),
