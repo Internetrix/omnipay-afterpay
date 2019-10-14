@@ -59,7 +59,6 @@ class PurchaseRequest extends AbstractRequest
             ),
             'merchantReference' => $this->getTransactionId(), // $this->getTransactionReference(),
         );
-
         return $data;
     }
 
@@ -105,7 +104,7 @@ class PurchaseRequest extends AbstractRequest
                 $itemArray[] = array(
                     'name'     => $item->getName(),
                     'quantity' => $item->getQuantity(),
-                    'sku' => isset($params['sku']) ? $params['sku'] : '',
+                    'sku' => $item->getDescription(),
                     'price'    => array(
                         'amount'   => $this->formatPrice($item->getPrice()),
                         'currency' => $this->getCurrency(),
