@@ -57,7 +57,7 @@ class PurchaseRequest extends AbstractRequest
                 'redirectConfirmUrl' => $returnUrl,
                 'redirectCancelUrl'  => $cancelUrl,
             ),
-            'merchantReference' => $this->getTransactionReference(),
+            'merchantReference' => $this->transactionId(), // $this->getTransactionReference(),
         );
 
         return $data;
@@ -104,6 +104,7 @@ class PurchaseRequest extends AbstractRequest
                 $itemArray[] = array(
                     'name'     => $item->getName(),
                     'quantity' => $item->getQuantity(),
+                    'sku' => $item->getParameter('sku'),
                     'price'    => array(
                         'amount'   => $this->formatPrice($item->getPrice()),
                         'currency' => $this->getCurrency(),
