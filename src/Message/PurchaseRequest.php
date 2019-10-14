@@ -57,7 +57,7 @@ class PurchaseRequest extends AbstractRequest
                 'redirectConfirmUrl' => $returnUrl,
                 'redirectCancelUrl'  => $cancelUrl,
             ),
-            'merchantReference' => $this->transactionId(), // $this->getTransactionReference(),
+            'merchantReference' => $this->getTransactionId(), // $this->getTransactionReference(),
         );
 
         return $data;
